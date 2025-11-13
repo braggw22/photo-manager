@@ -210,23 +210,23 @@ window.addEventListener('load', ()=>{ if(!logoEl.src || logoEl.src==='') { logoE
 let SITES = {
   SDNI: "NAS North Island (SDNI)",
   SDNS: "Naval Base San Diego (SDNS)",
-  PLM:  "NB Point Loma Annex (PLM)",
+  SDAS:  "NB Point Loma Annex (SDAS)",
   MRMZ: "MCAS Miramar (MRMZ)",
   LEMR: "NAS Lemoore (LEMR)",
   PRTH: "NBVC Port Hueneme (PRTH)"
 };
-let CDRL_BY_SITE = { SDNS:"A002", SDNI:"A004", PLM:"A006", MRMZ:"A008", LEMR:"A010", PRTH:"A012" };
+let CDRL_BY_SITE = { SDNS:"A002", SDNI:"A004", SDAS:"A006", MRMZ:"A008", LEMR:"A010", PRTH:"A012" };
 
 // Defensive migration: if SITES/CDRLs in storage are empty, restore defaults
 function defaultSites(){ return {
   SDNI: "NAS North Island (SDNI)",
   SDNS: "Naval Base San Diego (SDNS)",
-  PLM:  "NB Point Loma Annex (PLM)",
+  SDAS:  "NB Point Loma Annex (SDAS)",
   MRMZ: "MCAS Miramar (MRMZ)",
   LEMR: "NAS Lemoore (LEMR)",
   PRTH: "NBVC Port Hueneme (PRTH)"
 };}
-function defaultCdrl(){ return { SDNS:"A002", SDNI:"A004", PLM:"A006", MRMZ:"A008", LEMR:"A010", PRTH:"A012" };}
+function defaultCdrl(){ return { SDNS:"A002", SDNI:"A004", SDAS:"A006", MRMZ:"A008", LEMR:"A010", PRTH:"A012" };}
 
 function migrateSites(){
   if(!SITES || Object.keys(SITES).length===0){ SITES = defaultSites(); }
@@ -237,7 +237,7 @@ function migrateSites(){
 const PRELOADED = {
   SDNI:[{name:"285",trs:["TR 117","TR 201A"]},{name:"599",trs:["TR 30"]},{name:"690",trs:["TR 14"]},{name:"698",trs:["TR 24A"]}],
   SDNS:[{name:"3143",trs:["TR 334"]}],
-  PLM:[{name:"11",trs:["TR 143A","TR 25","TR 16","TR 9","CLOSET TR"]},{name:"652",trs:["TR 128"]}],
+  SDAS:[{name:"11",trs:["TR 143A","TR 25","TR 16","TR 9","CLOSET TR"]},{name:"652",trs:["TR 128"]}],
   MRMZ:[{name:"7515",trs:["TR 2"]},{name:"8671",trs:["TR 6"]}],
   LEMR:[{name:"730",trs:["TR 5-008","TR 7-010"]},{name:"738",trs:["TR 15","TR 50"]},{name:"799",trs:["TR 121"]}],
   PRTH:[{name:"103",trs:[]},{name:"283",trs:[]},{name:"1289",trs:[]},{name:"1300",trs:[]},{name:"1419",trs:[]},{name:"1425",trs:[]},{name:"1444",trs:[]},{name:"1446",trs:[]},{name:"1447",trs:[]},{name:"1448",trs:[]},{name:"1449",trs:[]},{name:"1450",trs:[]},{name:"1451",trs:[]},{name:"1454",trs:[]},{name:"1455",trs:[]}]
